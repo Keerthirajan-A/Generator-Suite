@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Suite</title>
+    <link rel="stylesheet" href="generator.css">
+    <link rel="icon" href="generate.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Here 👇</h1>
+
+        <!-- Section Navigation -->
+        <div class="section-nav">
+            <button onclick="showSection('barcodeSection')">Barcode Generator</button>
+            <button onclick="showSection('passwordSection')">Password Generator</button>
+            <button onclick="showSection('otpSection')">OTP Generator</button>
+        </div>
+
+        <!-- Barcode Generator Section -->
+        <div id="barcodeSection" class="generator-section">
+            <h2>Barcode Generator</h2>
+            <input type="text" id="barcodeInput" placeholder="Enter input for barcode">
+            <button onclick="generateBarcode()">Generate Barcode</button>
+            <div id="barcode">
+                <canvas id="barcodeCanvas"></canvas>
+                <button id="downloadBarcode" style="display: none;" onclick="downloadBarcode()">Download Barcode</button>
+            </div>
+        </div>
+
+        <!-- Password Generator Section -->
+        <div id="passwordSection" class="generator-section" style="display: none;">
+            <h2>Password Generator</h2>
+            <input type="number" id="passwordLength" placeholder="Length" min="6" max="20">
+            <button onclick="generatePassword()">Generate Password</button>
+            <div id="password">
+                <span id="passwordValue"></span>
+                <button id="copyPassword" style="display: none;" onclick="copyPassword()">Copy Password</button>
+            </div>
+        </div>
+
+        <!-- OTP Generator Section -->
+        <div id="otpSection" class="generator-section" style="display: none;">
+            <h2>OTP Generator</h2>
+            <button onclick="generateOTP(6)">Generate 6-Digit OTP</button>
+            <button onclick="generateOTP(8)">Generate 8-Digit OTP</button>
+            <button onclick="generateOTP(12)">Generate 12-Digit OTP</button>
+            <div id="otp">
+                <span id="otpValue"></span>
+                <button id="copyOtp" style="display: none;" onclick="copyOTP()">Copy OTP</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Keerthirajan A. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="generator.js"></script>
+</body>
+</html>
