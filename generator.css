@@ -195,17 +195,3 @@ body::before {
         padding: 12px;
     }
 }
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
